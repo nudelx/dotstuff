@@ -1,0 +1,117 @@
+   17  smbutil 
+   18  smbutil view 192.168.200.200
+   19  smbutil view smb://192.168.200.200
+   20  smbutil view smb://192.168.200.200
+   21  smbutil view smb://192.168.200.200
+   22  smbutil view alex@smb://192.168.200.200
+   23  man smbutil
+   24  man smbutil
+   25  smbutil view alex:Nudelx2004@smb://192.168.200.200
+   26  smbutil view alex:Nudelx2004smb://192.168.200.200
+   27  smbutil view alex:Nudelx2004 smb://192.168.200.200
+   30  smbutil view alex:Nudelx2004 smb://192.168.200.200
+   31  smbutil view alex:Nudelx2004 smb://192.168.200.200
+   32  smbutil view alexn:Nudelx2004 smb://192.168.200.200
+   33  smbutil view  //alexn@192.168.200.200
+   34  smbutil view  //alexn@192.168.20.58
+   35  smbutil view  //alexn@192.168.20.58
+   36  smbutil view  //alexn@192.168.20.58/Users
+   37  smbutil view  //alexn@192.168.20.58/Users
+   47  smbutil view  //alexn@192.168.20.58/Users
+  101  smbutil 192.168.0.100
+  102  smbutil \\192.168.0.100
+  104  smbutil view  //alexn@192.168.0.100
+  105  smbutil view  //192.168.0.100
+  106  smbutil view  //guest@192.168.0.100
+  503  history | grep smbutil
+  504  history | grep smbutil > smb_cheaysheet 
+  174  mount //92.168.200.64/STD_LIB ./mnt/
+  175  mount -touto //92.168.200.64/STD_LIB ./mnt/
+  176  mount -t ext //92.168.200.64/STD_LIB ./mnt/
+  177  manmount 
+  178  man mount 
+  185  history |grep mount 
+  187  mount -t  //92.168.200.64/STD_LIB ./mnt/
+  188  mamn mount 
+  189  man mount 
+  190  mount   //92.168.200.64/STD_LIB ./mnt/
+  191  mount -t ext3  //92.168.200.64/STD_LIB ./mnt/
+  192  mount -t ext3  //92.168.200.64/STD_LIB mnt/
+  193  mount -t auto  //92.168.200.64/STD_LIB mnt/
+  200  mount //192.168.200.64/STD_LIB mnt/
+  201  sudo mount //192.168.200.64/STD_LIB mnt/
+  202  sudo mount -t ext3 //192.168.200.64/STD_LIB mnt/
+  203  sudo mount -t ext4 //192.168.200.64/STD_LIB mnt/
+  204  sudo mount -t ext2 //192.168.200.64/STD_LIB mnt/
+  205  man mount 
+  206  sudo mount -a  //192.168.200.64/STD_LIB mnt/
+  207  sudo mount -a -t 'nofs'  //192.168.200.64/STD_LIB mnt/
+  208  sudo mount -t smbfs //192.168.200.64/STD_LIB mnt/
+  209  sudo mount -t smbfs //192.168.200.64/STD_LIB mnt/
+  214  mount 
+  225  umount 
+  227  mount 
+  228  umount /Users/nudelx/mnt
+  229  sudo umount /Users/nudelx/mnt
+  231  sudo mount -t auto //192.168.200.64/STD_LIB mnt/
+  232   mount -t smbfs //192.168.200.64/STD_LIB mnt/
+  233   mount -t smbfs //192.168.200.64/STD_LIB mnt/
+  234  history  | grep mount | grep NOTES
+  239  mount -t smbfs 192.168.20.56/NOTES mnt/
+  240  mount -t smbfs //192.168.20.56/NOTES mnt/
+  244  mount -t smbfs //192.168.20.58/NOTES mnt/
+  245  mount -t smbfs //192.168.20.58/NOTES mnt/
+  246  mount -t smbfs //192.168.20.58/NOTES mnt/
+  247   mount -t smbfs //192.168.200.64/STD_LIB mnt/
+  248   mount -t smbfs //192.168.200.64/STD_LIB mnt/
+  249  mount 
+  291  history mount 
+  292  history | grep  mount 
+  293   mount -t smbfs //192.168.200.64/STD_LIB mnt/
+  294  mount -t smbfs 192.168.20.56/NOTES mnt/
+  295  mount -t smbfs //192.168.20.56/NOTES mnt/
+  296  mount -t smbfs //192.168.20.58/NOTES mnt/
+  297  mount -t nfs //192.168.20.58/NOTES mnt/
+  298  mount -t ntfs //192.168.20.58/NOTES mnt/
+  300  mount 
+  301  umount /Volumes/NOTES
+  302  mount -t smbfs  //n@192.168.20.58/NOTES mnt/
+  303  mount 
+  310   echo 'mount -t smbfs  //alexn@192.168.20.58/NOTES mnt/' >> /Users/nudelx/dotfiles/smb_cheaysheet.bkp
+  312  umount ~/mnt/
+  317  umount mnt/
+  318   mount -t smbfs //root@192.168.200.64/STD_LIB mnt/
+  328  umount mnt/
+  416  mount -t smbfs  //alexn@192.168.20.155/NOTES mnt/
+  418  mount -t smbfs  //alexn@192.168.20.155/NOTES mnt/
+  424  mount -t smbfs  //alexn@192.168.20.155/Users/  mnt/
+  441  umount mnt/
+  442  sudo umount mnt/
+  443  mount
+  446  umount mnt/
+  460  mount -t smbfs  //alexn@192.168.20.155/Users/  mnt/
+  476  umount mnt/
+  598  history | mount 
+  599  history | grep mount 
+  603  history | grep mount >> smb_cheaysheet 
+  225  vi smb_cheaysheet 
+  408  smbutil view //192.168.20.155
+  410  vi smb_cheaysheet 
+  412  smbutil view //alexn@192.168.20.155
+  413  cat smb_cheaysheet 
+  414  cat smb_cheaysheet | less
+  416  mount -t smbfs  //alexn@192.168.20.155/NOTES mnt/
+  418  mount -t smbfs  //alexn@192.168.20.155/NOTES mnt/
+  419  smbutil view //alexn@192.168.20.155
+  420  smbutil view //alexn@192.168.20.155/c$
+  421  smbutil view //alexn@192.168.20.155/C$
+  422  smbutil view //alexn@192.168.20.155/C$
+  423  smbutil view //alexn@192.168.20.155/C$
+  424  mount -t smbfs  //alexn@192.168.20.155/Users/  mnt/
+  460  mount -t smbfs  //alexn@192.168.20.155/Users/  mnt/cccc
+
+
+smbutil view //alexn@192.168.20.128
+mount -t smbfs //alexn@192.168.20.128/G$ win/
+
+

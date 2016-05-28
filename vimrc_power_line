@@ -1,0 +1,45 @@
+"version 6.0
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+nmap gx <Plug>NetrwBrowseX
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set backspace=2
+set fileencodings=ucs-bom,utf-8,default,latin1
+set modelines=0
+set window=0
+syntax enable
+colorscheme default
+
+"   :wqvim: set ft=vim ::s
+"alex 
+filetype indent on
+set smartindent
+set scrolloff=5 
+set showmode " show the mode line 
+set wildmenu " show choose line i
+"set cursorline  "show the crrent line
+"set undofile " add ability to restore file after reopen 
+set hlsearch ""enable search hilight
+set ruler
+set expandtab "use space instead of tab [8]  
+
+autocmd BufRead,BufWritePre *.html normal gg=G
+autocmd Filetype html nnoremap <leader>c I <!--<esc>A--><esc>
+autocmd Filetype javascript nnoremap <leader>c I//<esc>
+autocmd Filetype perl nnoremap <leader>c I#<esc>
+
+
+
+"powerline
+
+set encoding=utf-8
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
+set fillchars+=stl:\ ,stlnc:\
+set t_Co=256
+set guifont=Inconsolata\ for\ Powerline
+set term=xterm-256color
+set termencoding=utf-8

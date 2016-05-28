@@ -1,0 +1,124 @@
+# /etc/bash/bashrc
+#
+# This file is sourced by all *interactive* bash shells on startup,
+# including some apparently interactive shells such as scp and rcp
+# that can't tolerate any output.  So make sure this doesn't display
+# anything or bad things will happen !
+
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+# Shell is non-interactive.  Be done now!
+return
+fi
+
+# Bash won't get SIGWINCH if another process is in the foreground.
+# Enable checkwinsize so that bash will check the terminal size when
+# it regains control.  #65623
+# http://cnswww.cns.cwru.edu/~chet/bash/FAQ (E11)
+shopt -s checkwinsize
+
+# Set colorful PS1 only on colorful terminals.
+# dircolors --print-database uses its own built-in database
+# instead of using /etc/DIR_COLORS.  Try to use the external file
+# first to take advantage of user additions.
+use_color=false
+safe_term=${TERM//[^[:alnum:]]/.}	# sanitize TERM
+
+if [[ -f /etc/DIR_COLORS ]] ; then
+grep -q "^TERM ${safe_term}" /etc/DIR_COLORS && use_color=true
+elif type -p dircolors >/dev/null ; then
+if dircolors --print-database | grep -q "^TERM ${safe_term}" ; then
+use_color=true
+fi
+fi
+
+#if ${use_color} ; then
+if [[ ${EUID} == 0 ]] ; then
+PS1='\[\033[0;31m\]\u@\h\[\033[0;34m\] \W \$\[\033[00m\] '
+else
+#PS1='\[\033[0;32m\]\u@\h\[\033[01;36m\] [\w]\033[0;36m\]\$\[\033[00m\] 
+#==> '
+PS1='\[\033[0;32m\]\u@\h\[\033[01;36m\] [\w]\033[0;36m\]\$\[\033[00m\] 
+\[\033[0;32m\]➞\[\033[00m\]  '
+fi
+#else
+#	if [[ ${EUID} == 0 ]] ; then
+#		# show root@ when we don't have colors
+#		PS1='\u@\h \W \$ '
+#	else
+#		PS1='\u@\h \w \$ '
+#	fi
+#fi
+
+# Try to keep environment pollution down, EPA loves us.
+unset use_color safe_term
+
+alias ls='ls -G'
+alias ll='ls -l -G'
+alias la='ls -la -G'
+alias lh='ls -lh -G'
+alias cp="cp -v"
+alias rm="rm -iv"
+alias mv="mv -v"
+alias logoutme="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
+alias home='cd ~'
+alias desk='cd ~/Desktop/'
+alias site='cd ~/Sites/' 
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias batt='pmset -g batt' 
+alias cpup='top -F -R -o cpu' 
+alias svnrep='http://nudel.unfuddle.com/svn/nudel_nudel-mac/' 
+alias gocloud='ssh 5640ed330c1e66894e0000ff@nudelx-drivebookdev.rhcloud.com'
+alias vi='vim'
+
+#alias 'rm -rf'="rm -rfv"
+#alias logout="clear && logout"
+export LC_CTYPE="en_US.UTF-8"
+export GREP_COLOR=31
+alias grep='grep --color=auto'
+
+#alias less="less -r"
+#alias more="less -r"
+#alias vi=vim
+#alias ssh4vnc='ssh -L 5901:localhost:5900 username@domain.net'
+
+
+
+function d2u(){
+        /usr/local/bin/dos2unix $1  && mv $1".unix" $1;
+}
+
+function bkp(){
+
+     if [ $1 ]  
+         then
+           cp $1 $1".bkp"
+           echo "file saved..."
+     fi
+
+
+}
+
+function getBatPercent(){
+
+        batt | grep -oE "[0-9]{1,3}%"
+
+}
+
+function create-project(){
+
+                 NAME="$1"
+                : ${NAME:="Project-"$(date +%F)}
+                mkdir -p ./$NAME/assets/css
+                mkdir -p ./$NAME/assets/js
+                mkdir -p ./$NAME/assets/img
+                touch ./$NAME/index.html
+                echo "project $NAME has been created ..."
+
+}
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-ocean.dark.sh"
+#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
