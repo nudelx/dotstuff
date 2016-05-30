@@ -1,0 +1,96 @@
+"version 6.0
+set nocompatible
+"filetype indent on
+filetype plugin on
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+nmap gx <Plug>NetrwBrowseX
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set backspace=2
+set fileencodings=ucs-bom,utf-8,default,latin1
+set modelines=0
+set window=0
+syntax enable
+set number
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'chriskempson/base16-vim'
+Plugin 'VundleVim/Vundle.vim'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
+Bundle 'vbundles/ctrlp'
+Plugin 'helino/vim-json'
+Bundle 'mtscout6/vim-cjsx'
+Bundle 'kchmck/vim-coffee-script'
+Plugin 'mhartington/oceanic-next'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+call vundle#end()
+
+
+set linebreak
+"filetype indent on
+set smartindent
+set scrolloff=5 
+set showmode " show the mode line 
+set wildmenu " show choose line i
+set ignorecase
+set hlsearch ""enable search hilight
+set incsearch " enable increment search 
+set ruler
+set expandtab "use space instead of tab [8]  
+set tabstop=2
+set shiftwidth=2
+set fileencoding=utf-8
+set encoding=utf-8
+
+set winheight=999
+set winheight=5
+set winminheight=5
+set winwidth=84
+
+highlight ExtraWhitespace ctermbg=18 guibg=#282a2e
+match ExtraWhitespace /\s\+$/
+set splitbelow
+set splitright
+set autoindent
+set smartindent
+
+"set t_Co=256
+"syntax on
+"let base16colorspace=256  " Access colors present in 256 colorspace
+"set background=dark
+"colorscheme base16-chalk  "Set through .zshrc 
+
+syntax enable
+set t_Co=256
+colorscheme OceanicNext
+set background=dark
+
+"autocmd BufRead,BufWritePre *.html normal gg=G
+"autocmd Filetype html nnoremap <leader>c I <!--<esc>A--><esc>
+autocmd Filetype javascript nnoremap <leader>c I//<esc>
+autocmd Filetype perl nnoremap <leader>c I#<esc>
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
+imap <C-Space> <C-n>
+map <leader><leader> :NERDTreeToggle<CR>
+"set folded line 
+"hi Folded ctermbg=242
+let g:jsx_ext_required=0
+let g:jsx_ext_required=0
+let g:jsx_pragma_required=1
+set ts=2 sw=2 sts=2
+"source ~/dotfiles/simple_power_line.vim
+"source ~/dotfiles/fancy_power_line.vim
+source ~/dotfiles/airline.vim
