@@ -71,7 +71,7 @@ alias site='cd ~/Sites/'
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias batt='pmset -g batt' 
 alias cpup='top -F -R -o cpu' 
-alias svnrep='http://nudel.unfuddle.com/svn/nudel_nudel-mac/' 
+alias svnrep='' 
 alias gocloud='ssh 5640ed330c1e66894e0000ff@nudelx-drivebookdev.rhcloud.com'
 alias vi='vim'
 
